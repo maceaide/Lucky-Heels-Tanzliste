@@ -19,11 +19,11 @@
             color: #2c3e50;
             margin-bottom: 20px;
         }
-        /* Styling für das Suchfeld */
+        /* Styling für das neue Suchfeld */
         .search-container {
             width: 100%;
             max-width: 1200px;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
         }
         .search-input {
             width: 100%;
@@ -38,15 +38,6 @@
         }
         .search-input:focus {
             border-color: #2c3e50;
-        }
-        /* Styling für die Ergebnisanzeige */
-        .search-counter {
-            width: 100%;
-            max-width: 1200px;
-            margin-bottom: 15px;
-            font-size: 14px;
-            color: #7f8c8d;
-            text-align: left;
         }
         .table-container {
             width: 100%;
@@ -66,7 +57,6 @@
         th, td {
             padding: 12px 15px;
             border-bottom: 1px solid #e0e0e0;
-            text-align: left;
         }
         th {
             background-color: #2c3e50;
@@ -87,20 +77,18 @@
 
     <h1>Tanzliste Lucky Heels</h1>
 
+    <!-- Neues Suchfeld Element -->
     <div class="search-container">
         <input type="text" id="searchInput" class="search-input" placeholder="Tanz, Musik, Interpret oder Jahr suchen...">
     </div>
-    
-    <!-- Element für den Live-Zähler -->
-    <div id="searchCounter" class="search-counter"></div>
 
     <div class="table-container">
         <table id="danceTable" class="table table-bordered table-hover table-condensed">
             <thead>
                 <tr>
                     <th title="Field #1">Tanz</th>
-                    <th title="Field #2">Mögliche Musik / Interpret</th>
-                    <th title="Field #3">Aktuelles Ranking</th>
+                    <th title="Field #2">mögliche Musik / Interpret</th>
+                    <th title="Field #3">aktuelles Ranking</th>
                     <th title="Field #4">Counts</th>
                     <th title="Field #5">Jahr</th>
                 </tr>
@@ -109,192 +97,182 @@
                 <tr>
                     <td>16 Step (P)</td>
                     <td>Would you go with me - John Turner</td>
-                    <td>17</td>
-                    <td>24</td>
+                    <td align="right">17</td>
+                    <td align="right">24</td>
                     <td>-</td>
                 </tr>
                 <tr>
                     <td>A Bar Song</td>
                     <td>A Bar Song - Shaboozey (Tipsy)</td>
-                    <td>29</td>
-                    <td>32</td>
+                    <td align="right">29</td>
+                    <td align="right">32</td>
                     <td>2024</td>
                 </tr>
                 <tr>
                     <td>After the Storm</td>
                     <td>Calm after the Storm - Common Linnets</td>
-                    <td>12</td>
-                    <td>32</td>
+                    <td align="right">12</td>
+                    <td align="right">32</td>
                     <td> </td>
                 </tr>
                 <tr>
                     <td>Ah Si</td>
                     <td>Levantano las Manos - Elsimbolo</td>
-                    <td>10</td>
-                    <td>32</td>
+                    <td align="right">10</td>
+                    <td align="right">32</td>
                     <td>2011</td>
                 </tr>
                 <tr>
                     <td>All Right on Sunday (Contra)</td>
                     <td>Except for Monday - Lorrie Morgan</td>
-                    <td>3</td>
-                    <td>32</td>
+                    <td align="right">3</td>
+                    <td align="right">32</td>
                     <td> </td>
                 </tr>
                 <tr>
                     <td>Alligator Rock</td>
                     <td>See You Later Alligator - Johnny Earle</td>
-                    <td>4</td>
-                    <td>48</td>
+                    <td align="right">4</td>
+                    <td align="right">48</td>
                     <td> </td>
                 </tr>
                 <tr>
                     <td>American Kids</td>
                     <td>American Kids - Kenny Chesney</td>
-                    <td>22</td>
-                    <td>32</td>
+                    <td align="right">22</td>
+                    <td align="right">32</td>
                     <td>2015</td>
                 </tr>
                 <tr>
                     <td>Anything for Love</td>
                     <td>Anything for Love - James House</td>
-                    <td>12</td>
-                    <td>32</td>
+                    <td align="right">12</td>
+                    <td align="right">32</td>
                     <td>2016</td>
                 </tr>
                 <tr>
                     <td>Apple Jack</td>
                     <td>Apple Jack - Lisa McHugh oder Dolly Parton</td>
-                    <td>5</td>
-                    <td>32</td>
+                    <td align="right">5</td>
+                    <td align="right">32</td>
                     <td> </td>
                 </tr>
                 <tr>
                     <td>Askin&#39; Questions</td>
                     <td>Askin&#39; Questions - Brady Seals</td>
-                    <td>13</td>
-                    <td>32</td>
+                    <td align="right">13</td>
+                    <td align="right">32</td>
                     <td> </td>
                 </tr>
                 <tr>
                     <td>Austin</td>
                     <td>Austin - Dasha</td>
-                    <td>13</td>
-                    <td>32</td>
+                    <td align="right">13</td>
+                    <td align="right">32</td>
                     <td>2024</td>
                 </tr>
                 <tr>
                     <td>Bad Moon on the Rise</td>
                     <td>Bad Moon rising - CCR</td>
-                    <td>8</td>
-                    <td>64</td>
+                    <td align="right">8</td>
+                    <td align="right">64</td>
                     <td>2004</td>
                 </tr>
                 <tr>
                     <td>Barn Dance (P)</td>
                     <td>Redneck Girl - Bellamy Brothers</td>
-                    <td>10</td>
-                    <td>32</td>
+                    <td align="right">10</td>
+                    <td align="right">32</td>
                     <td>2018</td>
                 </tr>
                 <tr>
                     <td>Beer for my Horses</td>
                     <td>Beer For My Horses - Toby Keith &amp; Willie Nelson</td>
-                    <td>32</td>
-                    <td>40</td>
+                    <td align="right">32</td>
+                    <td align="right">40</td>
                     <td>2003</td>
                 </tr>
                 <tr>
                     <td>Before the Devil</td>
                     <td>If you&#39;re going through hell - Rodney Atkins</td>
-                    <td>18</td>
-                    <td>32</td>
+                    <td align="right">18</td>
+                    <td align="right">32</td>
                     <td>2006</td>
                 </tr>
                 <tr>
                     <td>Black Coffee</td>
                     <td>Black Coffee - Lacy. J. Dalton</td>
-                    <td>45</td>
-                    <td>48</td>
+                    <td align="right">45</td>
+                    <td align="right">48</td>
                     <td>2003</td>
                 </tr>
                 <tr>
                     <td>Bosa Nova</td>
                     <td>Blame it on the Bossa Nova - Jane McDonald</td>
-                    <td>15</td>
-                    <td>64</td>
+                    <td align="right">15</td>
+                    <td align="right">64</td>
                     <td> </td>
                 </tr>
                 <tr>
                     <td>Brokenhearted</td>
                     <td>Brokenhearted - William Michael Morgan</td>
-                    <td>21</td>
-                    <td>32</td>
+                    <td align="right">21</td>
+                    <td align="right">32</td>
                     <td>2018</td>
                 </tr>
                 <tr>
                     <td>Cabo San Lucas</td>
                     <td>Cabo San Lucas - Toby Keith</td>
-                    <td>32</td>
-                    <td>32</td>
+                    <td align="right">32</td>
+                    <td align="right">32</td>
                     <td>2009</td>
                 </tr>
                 <tr>
                     <td>Canadian Stomp</td>
                     <td>Any Man of mine - Shania Twain</td>
-                    <td>35</td>
-                    <td>36</td>
+                    <td align="right">35</td>
+                    <td align="right">36</td>
                     <td>2017</td>
                 </tr>
                 <tr>
                     <td>Cash Back</td>
                     <td>I walk the Line - Rodney Crowell ft. Johny Cash</td>
-                    <td>13</td>
-                    <td>72</td>
+                    <td align="right">13</td>
+                    <td align="right">72</td>
                     <td> </td>
                 </tr>
                 <tr>
                     <td>Chattahoochee</td>
                     <td>Chattahoochee - Alan Jackson</td>
-                    <td>43</td>
-                    <td>28</td>
+                    <td align="right">43</td>
+                    <td align="right">28</td>
                     <td>2003</td>
                 </tr>
                 <tr>
                     <td>Chica Boom Boom</td>
                     <td>Boom Boom Goes My Heart - Alex Swings Oscar Sings</td>
-                    <td>2</td>
-                    <td>32</td>
+                    <td align="right">2</td>
+                    <td align="right">32</td>
                     <td> </td>
                 </tr>
                 <tr>
                     <td>Chill Factor</td>
                     <td>Last Night - Chris Anderson</td>
-                    <td>22</td>
-                    <td>48</td>
+                    <td align="right">22</td>
+                    <td align="right">48</td>
                     <td>2002</td>
                 </tr>
                 <tr>
                     <td>Clickety Clack</td>
                     <td>Southbound Train - Travis Tritt</td>
-                    <td>11</td>
-                    <td>68</td>
+                    <td align="right">11</td>
+                    <td align="right">68</td>
                     <td>2002</td>
                 </tr>
                 <tr>
                     <td>Closer</td>
                     <td>Closer - Susan Ashton</td>
-                    <td>14</td>
-                    <td>32</td>
+                    <td align="right">14</td>
+                    <td align="right">32</td>
                     <td>2003</td>
-                </tr>
-                <tr>
-                    <td>Codigo</td>
-                    <td>Código - George Strait</td>
-                    <td>26</td>
-                    <td>32</td>
-                    <td>2019</td>
-                </tr>
-                <tr>
-                    <td>Coffee Days &amp; Whiskey Nights</td>
-                    <td>Coffee Days and Whiskey Nights - Robynn Shane</td>
+                </tr
