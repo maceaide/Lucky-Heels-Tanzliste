@@ -75,9 +75,35 @@
     
     <h1 >Lucky Heels - Tanzlisten</h1>
 
-        <div class="search-container">
+       // <div class="search-container">
         <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Suchen nach Tanz, Interpret, Jahr...">
     </div>
+
+function filterTable() {
+    // 1. Suchtext aus dem Eingabefeld auslesen und in Kleinbuchstaben umwandeln
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toLowerCase();
+    
+    // 2. ALLE Tabellen auf der Webseite auswählen (wichtig: querySelectorAll statt querySelector)
+    var tables = document.querySelectorAll("table");
+
+    // 3. Jede einzelne Tabelle nacheinander durchlaufen
+    tables.forEach(function(table) {
+        var tr = table.getElementsByTagName("tr");
+
+        // 4. Alle Zeilen der aktuellen Tabelle durchlaufen (i = 1 überspringt die Kopfzeile)
+        for (var i = 1; i < tr.length; i++) {
+            var rowText = tr[i].textContent || tr[i].innerText;
+            
+            // 5. Prüfen, ob der Suchbegriff im Text der Zeile vorkommt
+            if (rowText.toLowerCase().indexOf(filter) > -1) {
+                tr[i].style.display = ""; // Zeile anzeigen
+            } else {
+                tr[i].style.display = "none"; // Zeile ausblenden
+            }
+        }
+    });
+}
 
     <h2 style="color: blue; font-weight: bold; style="font-size: 20px;">Aktuelle Tanzliste der Gruppe</h2>
 
