@@ -185,80 +185,35 @@
         }
     </script>
 
-    <div class="search-container">
-        <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Suchen nach Tanz, Interpret, Jahr...">
-    </div>
-    
-<h2 style="color: blue; font-weight: bold; style="font-size: 20px;">Gesamte Datenbank:</h2>
-    
-    <div class="table-wrapper">
-        <table id="danceTable">
-            <thead>
-                <tr>
-                    <th onclick="sortTable(0)">Tanz ↕</th>
-                    <th onclick="sortTable(1)">Mögliche Musik / Interpret ↕</th>
-                    <th onclick="sortTable(2)" class="center">Ranking ab 2024 ↕</th>
-                    <th onclick="sortTable(3)" class="center">Counts ↕</th>
-                    <th onclick="sortTable(4)" class="center">Jahr ↕</th>
-                </tr>
-            </thead>
-            <tbody>
+    <div class="search-container" style="margin-bottom: 15px;">
+    <input type="text" id="tableSearch" onkeyup="filterTable()" placeholder="Datenbank durchsuchen..." style="padding: 8px; width: 100%; max-width: 300px; font-size: 16px;">
+</div>
 
-<tr><td>1976</td><td>1976 von Alan Jackson</td><td class='center'>4</td><td class='center'>32</td><td class='center'>2008</td></tr>
-<tr><td>#Rednek</td><td>#REDNEK von Gord Bamford</td><td class='center'>1</td><td class='center'>64</td><td class='center'>2019</td></tr>
-<tr><td>(The) Bremer</td><td>Oh, lonesome me - Kentucky Headhunters</td><td class='center'>1</td><td class='center'>28</td><td class='center'>1994</td></tr>
-<tr><td>???</td><td>The Black Horse And The Cherry Tree - K.T. Tunstall</td><td class='center'>6</td><td class='center'>32</td><td class='center'>-</td></tr>
-<tr><td>1, 2 Snap</td><td>Snap - Rosa Linn</td><td class='center'>15</td><td class='center'>64</td><td class='center'>2022</td></tr>
-<tr><td>11 Beers</td><td>Any Man of mine - Shania Twain</td><td class='center'>2</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>16 Bars</td><td>-</td><td class='center'>3</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>16 Step (P)</td><td>Would you go with me - John Turner</td><td class='center'>23</td><td class='center'>24</td><td class='center'>-</td></tr>
-<tr><td>16 Tons</td><td>16 Tons von LeAnn Rimes</td><td class='center'>3</td><td class='center'>32</td><td class='center'>-</td></tr>
-<tr><td>2 Lane Highway</td><td>Me and My Girl von Vince Gill</td><td class='center'>10</td><td class='center'>64</td><td class='center'>2016</td></tr>
-<tr><td>21 Forever</td><td>21 Forever (feat. Dolly Parton & Slash) - Chris Janson</td><td class='center'>1</td><td class='center'>32</td><td class='center'>-</td></tr>
-<tr><td>3 Tequila Floor</td><td>3 Tequila Floor - Josiah Siska</td><td class='center'>14</td><td class='center'>32</td><td class='center'>2023</td></tr>
-<tr><td>50 Ways</td><td>50 Ways To Say Goodbye - Train</td><td class='center'>2</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>500 Hundred Miles</td><td>-</td><td class='center'>1</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>5-1-5-0</td><td>Dierks Bentley</td><td class='center'>1</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>8 Ball</td><td>-</td><td class='center'>1</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>80s Mercedees</td><td>Maren Morries</td><td class='center'>1</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>9 to 5</td><td>9 to 5 - Dolly Parton</td><td class='center'>2</td><td class='center'>32</td><td class='center'>2007</td></tr>
-<tr><td>A</td><td></td><td class='center'></td><td class='center'></td><td class='center'></td></tr>
-<tr><td>A Bar Song</td><td>A Bar Song - Shaboozey (Tipsy)</td><td class='center'>34</td><td class='center'>32</td><td class='center'>2024</td></tr>
-<tr><td>A Country High</td><td>High on a Country Song - Sam Riggs</td><td class='center'>6</td><td class='center'>64</td><td class='center'>2017</td></tr>
-<tr><td>A Cowboy and a Dancer</td><td>A Cowboy and a Dancer - Tracy Byrd</td><td class='center'>0</td><td class='center'>64</td><td class='center'>-</td></tr>
-<tr><td>A Devil in Disguise</td><td>Devils in Disguise - Elvis Presley</td><td class='center'>6</td><td class='center'>80</td><td class='center'>2004</td></tr>
-<tr><td>A different Summer</td><td>Beer Can´t Fix - Thomas Rhett & Jon Pardi</td><td class='center'>3</td><td class='center'>32</td><td class='center'>2020</td></tr>
-<tr><td>A Good Hearted Woman</td><td>A Good hearted Woman - Waylon Jennings</td><td class='center'>1</td><td class='center'>64</td><td class='center'>2009</td></tr>
-<tr><td>A Hero AB</td><td>Holding Out for a Hero - Adam Lambert</td><td class='center'>1</td><td class='center'>32</td><td class='center'>-</td></tr>
-<tr><td>A Rattlesnake Kiss</td><td>Ain't In Kansas Anymore - Miranda Lambert</td><td class='center'>9</td><td class='center'>32</td><td class='center'>2024</td></tr>
-<tr><td>A tale to tell</td><td>A Tale To Tell - Bo Katzmann Chor</td><td class='center'>1</td><td class='center'>32</td><td class='center'>-</td></tr>
-<tr><td>A Thousend Miles</td><td>A Thousand Miles, From Nowhere - Dwight Yoakam</td><td class='center'>1</td><td class='center'>36</td><td class='center'>-</td></tr>
-<tr><td>A Wee bit Lost</td><td>-</td><td class='center'>2</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>A woman like you</td><td>A Woman Like You - Johnny Reid</td><td class='center'>2</td><td class='center'>48</td><td class='center'>-</td></tr>
-<tr><td>A1</td><td>Billy bayou - Roger Miller</td><td class='center'>2</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>Aberdeen</td><td>Aberdeen - Avi Kaplan</td><td class='center'>7</td><td class='center'>56</td><td class='center'>2019</td></tr>
-<tr><td>Achy Breaky Heart </td><td>Achy Breaky Heart - Billy Ray Cyrus</td><td class='center'>9</td><td class='center'>32</td><td class='center'>2003</td></tr>
-<tr><td>Adalaida</td><td>Adalaida von Derek Ryan</td><td class='center'>5</td><td class='center'>32</td><td class='center'>2019</td></tr>
-<tr><td>Af en Af </td><td>Af en Af von Kurt Darren</td><td class='center'>2</td><td class='center'>32</td><td class='center'>2011</td></tr>
-<tr><td>After five Stomp</td><td>Settin' the Woods on Fire</td><td class='center'>3</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>Afterglow</td><td>Afterglow - Ed Sheeran</td><td class='center'>1</td><td class='center'>32</td><td class='center'>-</td></tr>
-<tr><td>Afterlife</td><td>Afterlife von Michael Schulte</td><td class='center'>2</td><td class='center'>32</td><td class='center'>2025</td></tr>
-<tr><td>Again and again</td><td>Love Again - Dua Lipa</td><td class='center'>2</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>Ah Si!</td><td>Levantano las Manos - Elsimbolo</td><td class='center'>12</td><td class='center'>32</td><td class='center'>2011</td></tr>
-<tr><td>Alan's Home</td><td>Home - Alan Jackson</td><td class='center'>7</td><td class='center'>68</td><td class='center'>-</td></tr>
-<tr><td>Alcohol</td><td>Put Some Alcohol On It - Gord Bamford</td><td class='center'>1</td><td class='center'>32</td><td class='center'>-</td></tr>
-<tr><td>Alexa</td><td>Mary Wanna von Tim Dugger</td><td class='center'>5</td><td class='center'>32</td><td class='center'>2023</td></tr>
-<tr><td>All jacked up</td><td>Gretchen Wilson</td><td class='center'>1</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>All My Ex's Live In Texas</td><td>All My Ex's livein Texas - George Strait</td><td class='center'>1</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>All my love</td><td>All My Love - Vella</td><td class='center'>1</td><td class='center'>64</td><td class='center'>-</td></tr>
-<tr><td>All Right on Sunday (Contra)</td><td>Except for Monday - Lorrie Morgan</td><td class='center'>5</td><td class='center'>32</td><td class='center'>-</td></tr>
-<tr><td>All the small Things</td><td>All The Small Things - Tyler Rich</td><td class='center'>11</td><td class='center'>32</td><td class='center'>2025</td></tr>
-<tr><td>All You Ever Do / Picnic Polka </td><td>All You Ever Do Is Bring Me Down - The Mavericks</td><td class='center'>2</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>All You Need</td><td>All you really need is Love - Brad Paisley</td><td class='center'>13</td><td class='center'>32</td><td class='center'>2010</td></tr>
-<tr><td>Alligator Rock</td><td>See You Later Alligator - Johnny Earle</td><td class='center'>4</td><td class='center'>48</td><td class='center'>-</td></tr>
-<tr><td>Alligator Schuffle</td><td>-</td><td class='center'>1</td><td class='center'>-</td><td class='center'>-</td></tr>
-<tr><td>Allways Humble</td><td>Humble - Ian Munsick</td><td class='center'>1</td><td class='center'>32</td><td class='center'>-</td></tr>
-<tr><td>Alpen Polka</td><td>Never Stop The Alpen Pop - DJ Ötzi</td><td class='center'>3</td><td class='center'>32</td><td class='center'>-</td></tr>
+<!-- Korrigiertes h2-Tag -->
+<h2 style="color: blue; font-weight: bold; font-size: 20px;">Gesamte Datenbank:</h2>
+    
+<div class="table-wrapper">
+    <table id="danceTable">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Tanz ↕</th>
+                <th onclick="sortTable(1)">Mögliche Musik / Interpret ↕</th>
+                <th onclick="sortTable(2)" class="center">Ranking ab 2024 ↕</th>
+                <th onclick="sortTable(3)" class="center">Counts ↕</th>
+                <th onclick="sortTable(4)" class="center">Jahr ↕</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1976</td><td>1976 von Alan Jackson</td><td class='center'>4</td><td class='center'>32</td><td class='center'>2008</td></tr>
+            <tr><td>#Rednek</td><td>#REDNEK von Gord Bamford</td><td class='center'>1</td><td class='center'>64</td><td class='center'>2019</td></tr>
+            <tr><td>(The) Bremer</td><td>Oh, lonesome me - Kentucky Headhunters</td><td class='center'>1</td><td class='center'>28</td><td class='center'>1994</td></tr>
+            <tr><td>???</td><td>The Black Horse And The Cherry Tree - K.T. Tunstall</td><td class='center'>6</td><td class='center'>32</td><td class='center'>-</td></tr>
+            <tr><td>1, 2 Snap</td><td>Snap - Rosa Linn</td><td class='center'>15</td><td class='center'>64</td><td class='center'>2022</td></tr>
+            <tr><td>11 Beers</td><td>Any Man of mine - Shania Twain</td><td class='center'>2</td><td class='center'>-</td><td class='center'>-</td></tr>
+            <tr><td>16 Bars</td><td>-</td><td class='center'>3</td><td class='center'>-</td><td class='center'>-</td></tr>
+            <tr><td>16 Step (P)</td><td>Would you go with me - John Turner</td><td class='center'>23</td><td class='center'>24</td><td class='center'>-</td></tr>
+            <tr><td>16 Tons</td><td>16 Tons von LeAnn Rimes</td><td class='center'>3</td><td class='center'>32</td><td class='center'>-</td></tr>
+            <tr><td>2 Lane Highway</td><td>Me and My Girl von Vince Gill</td><td class='center'>10</td><td class='center'>64</td><td class='center'>2016</td></tr>
 <tr><td>Always Humble</td><td>Humble - Ian Munsick</td><td class='center'>5</td><td class='center'>32</td><td class='center'>-</td></tr>
 <tr><td>Amame</td><td>Amame - Belle Perez</td><td class='center'>5</td><td class='center'>64</td><td class='center'>-</td></tr>
 <tr><td>Amarillo by Morning </td><td>Amarillo by Morning - Georg Strait</td><td class='center'>8</td><td class='center'>36</td><td class='center'>2017</td></tr>
