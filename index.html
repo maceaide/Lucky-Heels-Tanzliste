@@ -191,6 +191,57 @@
             sortDirections[colIndex] = !ascending;
         }
     </script>
+<h2 style="color: blue; font-weight: bold; font-size: 20px;">Aktuelle Tanzliste der Gruppe</h2>
+
+    <div class="table-wrapper">
+        <table id="danceTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Tanz ↕</th>
+                    <th onclick="sortTable(1)">Mögliche Musik / Interpret ↕</th>
+                    <th onclick="sortTable(2)" class="center">Ranking ab 2024 ↕</th>
+                    <th onclick="sortTable(3)" class="center">Counts ↕</th>
+                    <th onclick="sortTable(4)" class="center">Jahr ↕</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>16 Step (P)</td><td>Would you go with me - John Turner</td><td class='center'>23</td><td class='center'>24</td><td class='center'>-</td></tr>
+                <tr><td>A Bar Song</td><td>A Bar Song - Shaboozey (Tipsy)</td><td class='center'>34</td><td class='center'>32</td><td class='center'>2024</td></tr>
+                <tr><td>Ah Si!</td><td>Levantano las Manos - Elsimbolo</td><td class='center'>12</td><td class='center'>32</td><td class='center'>2011</td></tr>
+                <tr><td>All Right on Sunday (Contra)</td><td>Except for Monday - Lorrie Morgan</td><td class='center'>5</td><td class='center'>32</td><td class='center'>-</td></tr>
+                <tr><td>Alligator Rock</td><td>See You Later Alligator - Johnny Earle</td><td class='center'>4</td><td class='center'>48</td><td class='center'>-</td></tr>
+                <tr><td>Amarillo by Morning </td><td>Amarillo by Morning - Georg Strait</td><td class='center'>8</td><td class='center'>36</td><td class='center'>2017</td></tr>
+                <tr><td>American Kids</td><td>American Kids - Kenny Chesney</td><td class='center'>29</td><td class='center'>32</td><td class='center'>2015</td></tr>
+                <tr><td>Anything for Love</td><td>Anything for Love - James House</td><td class='center'>15</td><td class='center'>32</td><td class='center'>2016</td></tr>
+                <tr><td>Apple Jack</td><td>Apple Jack - Lisa McHugh oder Dolly Parton</td><td class='center'>8</td><td class='center'>32</td><td class='center'>-</td></tr>
+                <tr><td>Askin' Questions</td><td>Askin' Questions - Brady Seals</td><td class='center'>15</td><td class='center'>32</td><td class='center'>-</td></tr>
+                <tr><td>Austin</td><td>Austin - Dasha</td><td class='center'>14</td><td class='center'>32</td><td class='center'>2024</td></tr>
+                <tr><td>Bad Moon on the Rise</td><td>Bad Moon rising - CCR</td><td class='center'>10</td><td class='center'>64</td><td class='center'>2004</td></tr>
+                <tr><td>Barn Dance (P)</td><td>Redneck Girl - Bellamy Brothers</td><td class='center'>15</td><td class='center'>32</td><td class='center'>2018</td></tr>
+                <tr><td>Beer for my Horses</td><td>Beer For My Horses - Toby Keith & Willie Nelson</td><td class='center'>40</td><td class='center'>40</td><td class='center'>2003</td></tr>
+                <tr><td>Before</td><td>Mr. Rock N Roll - Any McDonald </td><td class='center'>7</td><td class='center'>32</td><td class='center'>2009</td></tr>
+                <tr><td>Before the Devil</td><td>If you're going through hell - Rodney Atkins</td><td class='center'>22</td><td class='center'>32</td><td class='center'>2006</td></tr>
+                <tr><td>Black Coffee</td><td>Black Coffee - Lacy. J. Dalton</td><td class='center'>54</td><td class='center'>48</td><td class='center'>2003</td></tr>
+                <tr><td>Boot Scootin' Boogie</td><td>Brooks & Dunn - Boot Scootin' Boogie</td><td class='center'>17</td><td class='center'>24</td><td class='center'>2008</td></tr>
+                <tr><td>Bosa Nova</td><td>Blame it on the Bossa Nova - Jane McDonald</td><td class='center'>18</td><td class='center'>64</td><td class='center'>-</td></tr>
+                <tr><td>Brokenhearted</td><td>Brokenhearted - William Michael Morgan</td><td class='center'>25</td><td class='center'>32</td><td class='center'>2018</td></tr>
+                <tr><td>Cabo San Lucas</td><td>Cabo San Lucas - Toby Keith</td><td class='center'>39</td><td class='center'>32</td><td class='center'>2009</td></tr>
+                <tr><td>Calm After the Storm</td><td>Calm after the Storm - Common Linnets</td><td class='center'>15</td><td class='center'>32</td><td class='center'>-</td></tr>
+                <tr><td>Canadian Stomp</td><td>Any Man of mine - Shania Twain</td><td class='center'>41</td><td class='center'>36</td><td class='center'>2017</td></tr>
+                <tr><td>Cash Back</td><td>I walk the Line - Rodney Crowell ft. Johny Cash</td><td class='center'>15</td><td class='center'>72</td><td class='center'>2014</td></tr>
+                <tr><td>Chattahoochee</td><td>Chattahoochee - Alan Jackson</td><td class='center'>52</td><td class='center'>28</td><td class='center'>2003</td></tr>
+                <tr><td>Chica Boom Boom</td><td>Boom Boom Goes My Heart - Alex Swings Oscar Sings</td><td class='center'>4</td><td class='center'>32</td><td class='center'>-</td></tr>
+                <tr><td>Chill Factor</td><td>Last Night - Chris Anderson</td><td class='center'>26</td><td class='center'>48</td><td class='center'>2002</td></tr>
+                <tr><td>Clickety Clack</td><td>Southbound Train - Travis Tritt</td><td class='center'>13</td><td class='center'>68</td><td class='center'>2002</td></tr>
+                <tr><td>Closer</td><td>Closer - Susan Ashton</td><td class='center'>20</td><td class='center'>32</td><td class='center'>2003</td></tr>
+                <tr><td>Codigo</td><td>Código - George Strait</td><td class='center'>28</td><td class='center'>32</td><td class='center'>2019</td></tr>
+                <tr><td>Coffee Days & Whiskey Nights</td><td>Coffee Days and Whiskey Nights - Robynn Shane</td><td class='center'>49</td><td class='center'>32</td><td class='center'>2018</td></tr>
+                <tr><td>Copperhead Road</td><td>Copperhead Road - Steve Earle</td><td class='center'>16</td><td class='center'>24</td><td class='center'>2007</td></tr>
+                <tr><td>Corn</td><td>Corn - Blake Shelton</td><td class='center'>36</td><td class='center'>32</td><td class='center'>2021</td></tr>
+                <tr><td>Corn don't grow</td><td>Where Corn don't grow - Travis Tritt</td><td class='center'>50</td><td class='center'>32</td><td class='center'>-</td></tr>
+            </tbody>
+        </table>
+    </div>
 
    
 </body>
