@@ -75,9 +75,28 @@
     
     <h1 >Lucky Heels - Tanzlisten</h1>
 
-<div class="search-container">
-        <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Suchen nach Tanz, Interpret, Jahr...">
-    </div>
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toLowerCase();
+    
+      var tables = document.querySelectorAll("table");
+
+    tables.forEach(function(table) {
+   
+        var tr = table.getElementsByTagName("tr");
+
+
+        for (var i = 1; i < tr.length; i++) {
+            var rowText = tr[i].textContent || tr[i].innerText;
+            
+  
+            if (rowText.toLowerCase().indexOf(filter) > -1) {
+                tr[i].style.display = ""; // Zeile anzeigen
+            } else {
+                tr[i].style.display = "none"; // Zeile ausblenden
+            }
+        }
+    });
+}
 
     <h2 style="color: blue; font-weight: bold; style="font-size: 20px;">Aktuelle Tanzliste der Gruppe</h2>
 
