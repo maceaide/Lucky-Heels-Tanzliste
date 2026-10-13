@@ -1380,32 +1380,25 @@
 <tr><td>Zanzare</td><td>No Hard Feelings - Old Dominion</td><td class='center'>3</td><td class='center'>64</td><td class='center'>2023</td></tr>
 <tr><td>Ziggy</td><td>-</td><td class='center'>1</td><td class='center'>-</td><td class='center'>-</td></tr>
 <tr><td>Zjozzy's Funk</td><td>Bacco Per Bacco - Zucchero</td><td class='center'>13</td><td class='center'>32</td><td class='center'>2007</td></tr>
-
-ction filterTable() {
-    // 1. Den eingegebenen Suchtext holen und in Kleinbuchstaben umwandeln
+                
+ <script>               
+function filterTable() {
     var input = document.getElementById("searchInput");
     var filter = input.value.toLowerCase();
-    
-    // 2. ALLE Tabellen auf der Seite auswählen (wichtig: querySelectorAll statt querySelector)
     var tables = document.querySelectorAll("table");
 
-    // 3. Eine Schleife, die über BEIDE Tabellen läuft
     tables.forEach(function(table) {
-        // Alle Zeilen (tr) der aktuell ausgewählten Tabelle holen
         var tr = table.getElementsByTagName("tr");
-
-        // 4. Alle Zeilen durchlaufen (i = 1 überspringt die Tabellenüberschrift)
         for (var i = 1; i < tr.length; i++) {
             var rowText = tr[i].textContent || tr[i].innerText;
-            
-            // 5. Wenn das Wort gefunden wird, Zeile zeigen, sonst verstecken
             if (rowText.toLowerCase().indexOf(filter) > -1) {
-                tr[i].style.display = ""; // Zeile anzeigen
+                tr[i].style.display = "";
             } else {
-                tr[i].style.display = "none"; // Zeile ausblenden
+                tr[i].style.display = "none";
             }
         }
     });
-}    
+}
+</script>
 </body>
 </html>
