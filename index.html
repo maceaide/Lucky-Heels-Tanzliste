@@ -290,6 +290,22 @@
     </script>
 
 <h2 style="color: blue; font-weight: bold; style="font-size: 20px;">Gesamte Datenbank:</h2>
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Suchen nach Tanz, Interpret, Jahr...">
+    </div>
+
+    <div class="table-wrapper">
+        <table id="danceTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Tanz ↕</th>
+                    <th onclick="sortTable(1)">Mögliche Musik / Interpret ↕</th>
+                    <th onclick="sortTable(2)" class="center">Ranking ab 2024 ↕</th>
+                    <th onclick="sortTable(3)" class="center">Counts ↕</th>
+                    <th onclick="sortTable(4)" class="center">Jahr ↕</th>
+                </tr>
+            </thead>
+            <tbody>
 
 <tr><td>16 Step (P)</td><td>Would you go with me - John Turner</td><td class='center'>17</td><td class='center'>24</td><td class='center'>-</td></tr>
 <tr><td>A Bar Song</td><td>A Bar Song - Shaboozey (Tipsy)</td><td class='center'>32</td><td class='center'>32</td><td class='center'>2024</td></tr>
