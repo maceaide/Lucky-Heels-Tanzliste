@@ -247,10 +247,31 @@
     </div>
 
     <script>
-        
+        function filterTable() {
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toLowerCase();
+
+    var tables = document.querySelectorAll("dancetable");
+
+    tables.forEach(function(table) {
+
+        var rows = table.getElementsByTagName("tr");
+
+        for (var i = 1; i < rows.length; i++) {
+
+            var text = rows[i].textContent || rows[i].innerText;
+
+            if (text.toLowerCase().indexOf(filter) > -1) {
+                rows[i].style.display = "";
+            } else {
+                rows[i].style.display = "none";
+            }
+        }
+    });
+}
      function sortTable(th, colIndex) {
 
-    var table = th.closest("dancetable");
+    var table = th.closest("danceTable");
     var tbody = table.tBodies[0];
 
     var rows = Array.from(tbody.rows);
@@ -1383,7 +1404,7 @@
     var input = document.getElementById("searchInput");
     var filter = input.value.toLowerCase();
 
-    var tables = document.querySelectorAll("table");
+    var tables = document.querySelectorAll("danceTable");
 
     tables.forEach(function(table) {
 
