@@ -91,7 +91,8 @@
 
     <div class="table-wrapper">
         <table class="sortable-table">"danceTable1"</table>
-     <table class="sortable-table">"danceTable2"</table>
+
+    
             <thead>
                 <tr>
                     <th onclick="sortTable(0)">Tanz ↕</th>
@@ -272,7 +273,7 @@
 
         let sortDirections = [true, true, true, true, true];
         function sortTable(colIndex) {
-            var table = document.getElementById("danceTable");
+            var table = document.getElementById("danceTable2");
             var tbody = table.tBodies[0];
             var rows = Array.from(tbody.rows);
             var ascending = sortDirections[colIndex];
@@ -304,7 +305,7 @@
 <h2 style="color: blue; font-weight: bold; style="font-size: 30px;">Gesamte Datenbank</h2>
     
     <div class="table-wrapper">
-        <table id="danceTable1">
+        <table id="danceTable2">
             <thead>
                 <tr>
                     <th onclick="sortTable(0)">Tanz ↕</th>
