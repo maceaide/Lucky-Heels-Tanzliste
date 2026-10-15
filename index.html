@@ -3,19 +3,16 @@
 <html lang="de">
 <head>
 
-<img src="Logo LH lowres.png" alt="Gruppe" width="150" height="150" style="position: absolute; left: 290px; top: 65px;">
+<!-- Dieser Block erzwingt die Box-Struktur und ignoriert störende Text-Ausrichtungen -->
+<div style="display: inline-grid !important; grid-template-columns: auto auto !important; align-items: center !important; justify-content: start !important; width: auto !important; height: 50px !important; clear: both !important;">
 
-<!-- Start des Kopfbereichs -->
-<div style="width: 100%; clear: both; margin-bottom: 20px;">
+  <!-- 1. DEIN LOGO -->
+  <img src="logo.png" alt="Lucky Heels Logo" style="display: block !important; height: 50px !important; width: auto !important; margin: 0 !important; padding: 0 !important;">
 
- 
-  <!-- VERKNÜPFUNG (Rückt dadurch automatisch rechts daneben und wird mittig ausgerichtet) -->
-  <a href="#verzeichnis-aires-tanzsammlung" style="display: inline-block; text-decoration: none; color: #0066cc; font-weight: bold; font-family: sans-serif; line-height: 50px;">
+  <!-- 2. DIE VERKNÜPFUNG (Wird durch das Grid unumgänglich nach rechts geschoben) -->
+  <a href="#verzeichnis-aires-tanzsammlung" style="display: block !important; margin-left: 15px !important; text-decoration: none !important; color: #0066cc !important; font-weight: bold !important; font-family: sans-serif !important; white-space: nowrap !important; font-size: 16px !important; position: static !important; float: none !important; top: auto !important;">
     Zur Aires Tanzsammlung &darr;
   </a>
-
-  <!-- Bereinigt die Ausrichtung für Elemente, die danach folgen -->
-  <div style="clear: both;"></div>
 </div>
 
   
