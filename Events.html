@@ -17,7 +17,7 @@
         }
 
         h1 {
-            color: sienna;
+            color: blau;
             margin-bottom: 30px;
             text-align: center;
             font-size: 28px;
@@ -25,7 +25,7 @@
 
         .table-container {
             width: 100%;
-            max-width: 900px;
+            max-width: 1000px; /* Breite leicht erhöht für die neue Spalte */
             background-color: #ffffff;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             border-radius: 8px;
@@ -54,7 +54,6 @@
             vertical-align: top;
         }
 
-        /* Leichte Hintergrundfarbe für Gruppen-Blöcke zur besseren Erkennung */
         .group-even {
             background-color: #fcfcfc;
         }
@@ -66,7 +65,6 @@
 </head>
 <body>
 
-    
     <!-- Hauptüberschrift -->
     <h1>Übersicht Events und angemeldeten Teilnehmer</h1>
 
@@ -76,6 +74,7 @@
             <thead>
                 <tr>
                     <th>Event</th>
+                    <th>Datum</th>
                     <th>Teilnehmer</th>
                     <th>Angemeldet von</th>
                 </tr>
@@ -84,10 +83,10 @@
                 
                 <!-- ERSTER BLOCK: 1 Event, 3 Teilnehmer, 1 Anmelder -->
                 <tr class="group-odd">
-                    <!-- rowspan="3" bedeutet: Diese Zelle erstreckt sich über 3 Zeilen nach unten -->
+                    <!-- rowspan="3" verbindet die Zellen für alle 3 Teilnehmer-Zeilen -->
                     <td rowspan="3"><strong>Lucky Heels Country Night</strong></td>
+                    <td rowspan="3" style="white-space: nowrap;">24.10.2026</td>
                     <td>Max Mustermann</td>
-                    <!-- Auch diese Zelle erstreckt sich über die 3 Zeilen der Teilnehmer -->
                     <td rowspan="3">Anna Schmidt</td>
                 </tr>
                 <tr class="group-odd">
@@ -101,6 +100,7 @@
                 <tr class="group-even">
                     <!-- rowspan="2" für 2 Teilnehmer -->
                     <td rowspan="2"><strong>Tanz-Workshop Salsa</strong></td>
+                    <td rowspan="2" style="white-space: nowrap;">07.11.2026</td>
                     <td>Michael Wagner</td>
                     <td rowspan="2">Sabine Wagner</td>
                 </tr>
