@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üversicht Events und angemeldeten Teilnehmer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333333;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #0066cc;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .table-container {
+            width: 100%;
+            max-width: 900px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Narrative Darstellung statt einer echten CSS-Tabelle */
+        .event-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .event-table th {
+            background-color: #333333;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 14px 20px;
+            font-size: 16px;
+        }
+
+        .event-table td {
+            padding: 14px 20px;
+            border-bottom: 1px solid #eeeeee;
+            font-size: 15px;
+        }
+
+        /* Zeilen-Wechsel-Farbe für bessere Lesbarkeit */
+        .event-table tr:nth-child(even) {
+            background-color: #fcfcfc;
+        }
+
+        /* Hover-Effekt beim Überfahren mit der Maus */
+        .event-table tr:hover {
+            background-color: #f1f7fc;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Die Hauptüberschrift der Seite -->
+    <h1>Übersicht Events und angemeldeten Teilnehmer</h1>
+
+    <!-- Der Container für die Tabelle -->
+    <div class="table-container">
+        <table class="event-table">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Teilnehmer</th>
+                    <th>Angemeldet von</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Beispiel-Zeile 1 -->
+                <tr>
+                    <td>Tanz-Workshop Salsa</td>
+                    <td>Max Mustermann</td>
+                    <td>Anna Schmidt</td>
+                </tr>
+                <!-- Beispiel-Zeile 2 -->
+                <tr>
+                    <td>Lucky Heels Country Night</td>
+                    <td>Lisa Müller</td>
+                    <td>Lisa Müller</td>
+                </tr>
+                <!-- Beispiel-Zeile 3 -->
+                <tr>
+                    <td>Line Dance Grundlagen</td>
+                    <td>Michael Wagner</td>
+                    <td>Sabine Wagner</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
