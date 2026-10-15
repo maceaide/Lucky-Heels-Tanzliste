@@ -1393,7 +1393,7 @@
 function filterTable() {
     var input = document.getElementById("searchInput");
     var filter = input.value.toLowerCase();
-    var tables = document.querySelectorAll("table");
+    var tables = event.target.closest('table');
 
     tables.forEach(function(table) {
         var tr = table.getElementsByTagName("tr");
