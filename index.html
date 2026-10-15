@@ -248,70 +248,7 @@
 
         
     
-<script>
 
-function filterTable() {
-
-    var input = document.getElementById("searchInput");
-    var filter = input.value.toLowerCase();
-
-    var tables = document.querySelectorAll("table");
-
-    tables.forEach(function(table) {
-
-        var rows = table.getElementsByTagName("tr");
-
-        for (var i = 1; i < rows.length; i++) {
-
-            var text = rows[i].textContent || rows[i].innerText;
-
-            rows[i].style.display =
-                text.toLowerCase().includes(filter)
-                ? ""
-                : "none";
-        }
-    });
-}
-
-function sortTable(th, colIndex) {
-
-    var table = th.closest("table");
-    var tbody = table.tBodies[0];
-
-    var rows = Array.from(tbody.rows);
-
-    var ascending =
-        th.getAttribute("data-sort") !== "asc";
-
-    rows.sort(function(a, b) {
-
-        var cellA = a.cells[colIndex].textContent.trim();
-        var cellB = b.cells[colIndex].textContent.trim();
-
-        var numA = parseFloat(cellA);
-        var numB = parseFloat(cellB);
-
-        if (!isNaN(numA) && !isNaN(numB)) {
-            return ascending ? numA - numB : numB - numA;
-        }
-
-        return ascending
-            ? cellA.localeCompare(cellB, "de")
-            : cellB.localeCompare(cellA, "de");
-    });
-
-    rows.forEach(row => tbody.appendChild(row));
-
-    table.querySelectorAll("th")
-         .forEach(h => h.removeAttribute("data-sort"));
-
-    th.setAttribute(
-        "data-sort",
-        ascending ? "asc" : "desc"
-    );
-}
-
-</script>
    
 
 <h2 style="color: blue; font-weight: bold; style="font-size: 30px;">Gesamte Datenbank</h2>
@@ -1402,7 +1339,72 @@ function sortTable(th, colIndex) {
 <tr><td>Zanzare</td><td>No Hard Feelings - Old Dominion</td><td class='center'>3</td><td class='center'>64</td><td class='center'>2023</td></tr>
 <tr><td>Ziggy</td><td>-</td><td class='center'>1</td><td class='center'>-</td><td class='center'>-</td></tr>
 <tr><td>Zjozzy's Funk</td><td>Bacco Per Bacco - Zucchero</td><td class='center'>13</td><td class='center'>32</td><td class='center'>2007</td></tr>
-                
+
+<script>
+
+function filterTable() {
+
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toLowerCase();
+
+    var tables = document.querySelectorAll("table");
+
+    tables.forEach(function(table) {
+
+        var rows = table.getElementsByTagName("tr");
+
+        for (var i = 1; i < rows.length; i++) {
+
+            var text = rows[i].textContent || rows[i].innerText;
+
+            rows[i].style.display =
+                text.toLowerCase().includes(filter)
+                ? ""
+                : "none";
+        }
+    });
+}
+
+function sortTable(th, colIndex) {
+
+    var table = th.closest("table");
+    var tbody = table.tBodies[0];
+
+    var rows = Array.from(tbody.rows);
+
+    var ascending =
+        th.getAttribute("data-sort") !== "asc";
+
+    rows.sort(function(a, b) {
+
+        var cellA = a.cells[colIndex].textContent.trim();
+        var cellB = b.cells[colIndex].textContent.trim();
+
+        var numA = parseFloat(cellA);
+        var numB = parseFloat(cellB);
+
+        if (!isNaN(numA) && !isNaN(numB)) {
+            return ascending ? numA - numB : numB - numA;
+        }
+
+        return ascending
+            ? cellA.localeCompare(cellB, "de")
+            : cellB.localeCompare(cellA, "de");
+    });
+
+    rows.forEach(row => tbody.appendChild(row));
+
+    table.querySelectorAll("th")
+         .forEach(h => h.removeAttribute("data-sort"));
+
+    th.setAttribute(
+        "data-sort",
+        ascending ? "asc" : "desc"
+    );
+}
+
+</script>
+             
  <script>               
  
 
