@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Üversicht Events und angemeldeten Teilnehmer</title>
+    <title>Übersicht Events und angemeldeten Teilnehmer</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -32,7 +32,6 @@
             overflow: hidden;
         }
 
-        /* Narrative Darstellung statt einer echten CSS-Tabelle */
         .event-table {
             width: 100%;
             border-collapse: collapse;
@@ -45,31 +44,32 @@
             font-weight: 600;
             padding: 14px 20px;
             font-size: 16px;
+            border: 1px solid #444444;
         }
 
         .event-table td {
             padding: 14px 20px;
-            border-bottom: 1px solid #eeeeee;
+            border: 1px solid #eeeeee;
             font-size: 15px;
+            vertical-align: top;
         }
 
-        /* Zeilen-Wechsel-Farbe für bessere Lesbarkeit */
-        .event-table tr:nth-child(even) {
+        /* Leichte Hintergrundfarbe für Gruppen-Blöcke zur besseren Erkennung */
+        .group-even {
             background-color: #fcfcfc;
         }
-
-        /* Hover-Effekt beim Überfahren mit der Maus */
-        .event-table tr:hover {
-            background-color: #f1f7fc;
+        
+        .group-odd {
+            background-color: #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <!-- Die Hauptüberschrift der Seite -->
+    <!-- Hauptüberschrift -->
     <h1>Übersicht Events und angemeldeten Teilnehmer</h1>
 
-    <!-- Der Container für die Tabelle -->
+    <!-- Tabellen-Bereich -->
     <div class="table-container">
         <table class="event-table">
             <thead>
@@ -80,24 +80,33 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Beispiel-Zeile 1 -->
-                <tr>
-                    <td>Tanz-Workshop Salsa</td>
+                
+                <!-- ERSTER BLOCK: 1 Event, 3 Teilnehmer, 1 Anmelder -->
+                <tr class="group-odd">
+                    <!-- rowspan="3" bedeutet: Diese Zelle erstreckt sich über 3 Zeilen nach unten -->
+                    <td rowspan="3"><strong>Lucky Heels Country Night</strong></td>
                     <td>Max Mustermann</td>
-                    <td>Anna Schmidt</td>
+                    <!-- Auch diese Zelle erstreckt sich über die 3 Zeilen der Teilnehmer -->
+                    <td rowspan="3">Anna Schmidt</td>
                 </tr>
-                <!-- Beispiel-Zeile 2 -->
-                <tr>
-                    <td>Lucky Heels Country Night</td>
-                    <td>Lisa Müller</td>
-                    <td>Lisa Müller</td>
+                <tr class="group-odd">
+                    <td>Erika Mustermann</td>
                 </tr>
-                <!-- Beispiel-Zeile 3 -->
-                <tr>
-                    <td>Line Dance Grundlagen</td>
+                <tr class="group-odd">
+                    <td>Hans Meier</td>
+                </tr>
+
+                <!-- ZWEITER BLOCK: 1 Event, 2 Teilnehmer, 1 Anmelder -->
+                <tr class="group-even">
+                    <!-- rowspan="2" für 2 Teilnehmer -->
+                    <td rowspan="2"><strong>Tanz-Workshop Salsa</strong></td>
                     <td>Michael Wagner</td>
-                    <td>Sabine Wagner</td>
+                    <td rowspan="2">Sabine Wagner</td>
                 </tr>
+                <tr class="group-even">
+                    <td>Janine Wagner</td>
+                </tr>
+
             </tbody>
         </table>
     </div>
