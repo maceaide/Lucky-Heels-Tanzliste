@@ -246,15 +246,16 @@
         </table>
     </div>
 
-    <script>
         
     
+<script>
+
 function filterTable() {
 
     var input = document.getElementById("searchInput");
     var filter = input.value.toLowerCase();
 
-    var tables = document.querySelectorAll("dancetable");
+    var tables = document.querySelectorAll("table");
 
     tables.forEach(function(table) {
 
@@ -271,8 +272,47 @@ function filterTable() {
         }
     });
 }
-  
-    </script>
+
+function sortTable(th, colIndex) {
+
+    var table = th.closest("table");
+    var tbody = table.tBodies[0];
+
+    var rows = Array.from(tbody.rows);
+
+    var ascending =
+        th.getAttribute("data-sort") !== "asc";
+
+    rows.sort(function(a, b) {
+
+        var cellA = a.cells[colIndex].textContent.trim();
+        var cellB = b.cells[colIndex].textContent.trim();
+
+        var numA = parseFloat(cellA);
+        var numB = parseFloat(cellB);
+
+        if (!isNaN(numA) && !isNaN(numB)) {
+            return ascending ? numA - numB : numB - numA;
+        }
+
+        return ascending
+            ? cellA.localeCompare(cellB, "de")
+            : cellB.localeCompare(cellA, "de");
+    });
+
+    rows.forEach(row => tbody.appendChild(row));
+
+    table.querySelectorAll("th")
+         .forEach(h => h.removeAttribute("data-sort"));
+
+    th.setAttribute(
+        "data-sort",
+        ascending ? "asc" : "desc"
+    );
+}
+
+</script>
+   
 
 <h2 style="color: blue; font-weight: bold; style="font-size: 30px;">Gesamte Datenbank</h2>
     
