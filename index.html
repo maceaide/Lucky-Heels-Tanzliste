@@ -247,30 +247,29 @@
     </div>
 
     <script>
-        function filterTable() {
-    var input = document.getElementById("searchInput");
-    var filter = input.value.toLowerCase();
+        
+     function sortTable(th, colIndex) {
+function filterTable() {
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById("d-Table");
+            var tr = table.getElementsByTagName("tr");
 
-    var tables = document.querySelectorAll("dancetable");
-
-    tables.forEach(function(table) {
-
-        var rows = table.getElementsByTagName("tr");
-
-        for (var i = 1; i < rows.length; i++) {
-
-            var text = rows[i].textContent || rows[i].innerText;
-
-            if (text.toLowerCase().indexOf(filter) > -1) {
-                rows[i].style.display = "";
-            } else {
-                rows[i].style.display = "none";
+            for (var i = 1; i < tr.length; i++) {
+                var show = false;
+                var tds = tr[i].getElementsByTagName("td");
+                for (var j = 0; j < tds.length; j++) {
+                    if (tds[j]) {
+                        var textValue = tds[j].textContent || tds[j].innerText;
+                        if (textValue.toUpperCase().indexOf(filter) > -1) {
+                            show = true;
+                            break;
+                        }
+                    }
+                }
+                tr[i].style.display = show ? "" : "none";
             }
         }
-    });
-}
-     function sortTable(th, colIndex) {
-
     var table = th.closest("danceTable");
     var tbody = table.tBodies[0];
 
