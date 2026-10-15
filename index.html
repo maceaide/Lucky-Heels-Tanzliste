@@ -93,11 +93,11 @@
         <table id="danceTable">
             <thead>
                 <tr>
-                    <th onclick="sortTable(this,0)">Tanz ↕</th>
-                    <th onclick="sortTable(this,1)">Mögliche Musik / Interpret ↕</th>
-                    <th onclick="sortTable(this,2)" class="center">Ranking > 2024 ↕</th>
-                    <th onclick="sortTable(this,3)" class="center">Counts ↕</th>
-                    <th onclick="sortTable(this,4)" class="center">Jahr ↕</th>
+                    <th onclick="sortTable(this, 0)">Tanz ↕</th>
+                    <th onclick="sortTable(this, 1)">Mögliche Musik / Interpret ↕</th>
+                    <th onclick="sortTable(this, 2)" class="center">Ranking > 2024 ↕</th>
+                    <th onclick="sortTable(this, 3)" class="center">Counts ↕</th>
+                    <th onclick="sortTable(this, 4)" class="center">Jahr ↕</th>
                 </tr>
             </thead>
             <tbody>
@@ -293,11 +293,11 @@
         <table id="danceTable1">
             <thead>
                 <tr>
-                     <th onclick="sortTable(this,0)">Tanz ↕</th>
-                    <th onclick="sortTable(this,1)">Mögliche Musik / Interpret ↕</th>
-                    <th onclick="sortTable(this,2)" class="center">Ranking > 2024 ↕</th>
-                    <th onclick="sortTable(this,3)" class="center">Counts ↕</th>
-                    <th onclick="sortTable(this,4)" class="center">Jahr ↕</th>
+                     <th onclick="sortTable(this, 0)">Tanz ↕</th>
+                    <th onclick="sortTable(this, 1)">Mögliche Musik / Interpret ↕</th>
+                    <th onclick="sortTable(this, 2)" class="center">Ranking > 2024 ↕</th>
+                    <th onclick="sortTable(this, 3)" class="center">Counts ↕</th>
+                    <th onclick="sortTable(this, 4)" class="center">Jahr ↕</th>
                 </tr>
             </thead>
             <tbody>
@@ -1380,7 +1380,7 @@
  function filterTable() {
             var input = document.getElementById("searchInput");
             var filter = input.value.toUpperCase();
-            var table = document.getElementById("danceTable1");
+            var table = document.getElementById("danceTable");
             var tr = table.getElementsByTagName("tr");
 
             for (var i = 1; i < tr.length; i++) {
@@ -1400,35 +1400,42 @@
         }
 
         let sortDirections = [true, true, true, true, true];
-        function sortTable(colIndex) {
-            var table = document.getElementById("danceTable1");
-            var tbody = table.tBodies[0];
-            var rows = Array.from(tbody.rows);
-            var ascending = sortDirections[colIndex];
-            
-            rows.sort(function(a, b) {
-                var cellA = a.cells[colIndex].textContent.trim();
-                var cellB = b.cells[colIndex].textContent.trim();
-                
-                // Check if values are numeric
-                var numA = parseInt(cellA, 10);
-                var numB = parseInt(cellB, 10);
-                
-                if (!isNaN(numA) && !isNaN(numB)) {
-                    return ascending ? numA - numB : numB - numA;
-                }
-                
-                // Fallback to string comparison
-                return ascending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
-            });
-            
-            // Re-append sorted rows
-            rows.forEach(row => tbody.appendChild(row));
-            
-            // Toggle direction
-            sortDirections[colIndex] = !ascending;
+       function sortTable(th, colIndex) {
+
+    var table = th.closest("table");
+    var tbody = table.tBodies[0];
+
+    var rows = Array.from(tbody.rows);
+
+    var ascending =
+        th.getAttribute("data-sort") !== "asc";
+
+    rows.sort(function(a, b) {
+
+        var cellA = a.cells[colIndex].textContent.trim();
+        var cellB = b.cells[colIndex].textContent.trim();
+
+        var numA = parseFloat(cellA);
+        var numB = parseFloat(cellB);
+
+        if (!isNaN(numA) && !isNaN(numB)) {
+            return ascending ? numA - numB : numB - numA;
         }
-  
+
+        return ascending
+            ? cellA.localeCompare(cellB, "de")
+            : cellB.localeCompare(cellA, "de");
+    });
+
+    rows.forEach(row => tbody.appendChild(row));
+
+    table.querySelectorAll("th").forEach(h =>
+        h.removeAttribute("data-sort")
+    );
+
+    th.setAttribute("data-sort",
+        ascending ? "asc" : "desc");
+}
    </script>
            
 </body>
