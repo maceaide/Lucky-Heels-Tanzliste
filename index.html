@@ -93,11 +93,11 @@
         <table id="danceTable">
             <thead>
                 <tr>
-                    <th onclick="sortTable(this, 0)">Tanz ↕</th>
-                    <th onclick="sortTable(this, 1)">Mögliche Musik / Interpret ↕</th>
-                    <th onclick="sortTable(this, 2)" class="center">Ranking > 2024 ↕</th>
-                    <th onclick="sortTable(this, 3)" class="center">Counts ↕</th>
-                    <th onclick="sortTable(this, 4)" class="center">Jahr ↕</th>
+                    <th onclick="sortTable(this,0)">Tanz ↕</th>
+                    <th onclick="sortTable(this,1)">Mögliche Musik / Interpret ↕</th>
+                    <th onclick="sortTable(this,2)" class="center">Ranking > 2024 ↕</th>
+                    <th onclick="sortTable(this,3)" class="center">Counts ↕</th>
+                    <th onclick="sortTable(this,4)" class="center">Jahr ↕</th>
                 </tr>
             </thead>
             <tbody>
@@ -252,7 +252,7 @@
 function filterTable() {
             var input = document.getElementById("searchInput");
             var filter = input.value.toUpperCase();
-            var table = document.getElementById("d-Table");
+            var table = document.getElementById("danceTable");
             var tr = table.getElementsByTagName("tr");
 
             for (var i = 1; i < tr.length; i++) {
@@ -310,16 +310,14 @@ function filterTable() {
 <h2 style="color: blue; font-weight: bold; style="font-size: 30px;">Gesamte Datenbank</h2>
     
     <div class="table-wrapper">
-        <table id="danceTable
-         
-         ">
+        <table id="danceTable">
             <thead>
                 <tr>
-                     <th onclick="sortTable(this, 0)">Tanz ↕</th>
-                    <th onclick="sortTable(this, 1)">Mögliche Musik / Interpret ↕</th>
-                    <th onclick="sortTable(this, 2)" class="center">Ranking > 2024 ↕</th>
-                    <th onclick="sortTable(this, 3)" class="center">Counts ↕</th>
-                    <th onclick="sortTable(this, 4)" class="center">Jahr ↕</th>
+                    <th onclick="sortTable(this,0)">Tanz ↕</th>
+                    <th onclick="sortTable(this,1)">Mögliche Musik / Interpret ↕</th>
+                    <th onclick="sortTable(this,2)" class="center">Ranking > 2024 ↕</th>
+                    <th onclick="sortTable(this,3)" class="center">Counts ↕</th>
+                    <th onclick="sortTable(this,4)" class="center">Jahr ↕</th>
                 </tr>
             </thead>
             <tbody>
