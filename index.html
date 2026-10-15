@@ -80,7 +80,7 @@
  
      <h1 >Lucky Heels - Tanzlisten</h1>
  
-<p style="color: blue; font-weight: bold; font-size: 18px;">Stand: <time datetime="2026-10-08">15. Oktober 2026</time></p>
+<p style="color: blue; font-weight: bold; font-size: 18px;">Stand: <time datetime="2026-10-08">14. Oktober 2026</time></p>
 <p style="color: blue; font-weight: bold; font-size: 12px;">Developer/Owner: Aires Macedo</p>
     
     <div class="search-container">
@@ -90,9 +90,7 @@
     <h2 style="color: blue; font-weight: bold; style="font-size: 20px;">Tanzrepertoire der Luckys</h2>
 
     <div class="table-wrapper">
-        <table class="sortable-table">"danceTable1"</table>
-
-    
+        <table id="danceTable">
             <thead>
                 <tr>
                     <th onclick="sortTable(0)">Tanz ↕</th>
@@ -249,11 +247,11 @@
     </div>
 
     <script>
-
-     document.querySelectorAll('.sortable-table').forEach(table => {
-    $(table).DataTable(); 
-});
-      
+        function filterTable() {
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById("danceTable");
+            var tr = table.getElementsByTagName("tr");
 
             for (var i = 1; i < tr.length; i++) {
                 var show = false;
@@ -273,10 +271,10 @@
 
         let sortDirections = [true, true, true, true, true];
         function sortTable(colIndex) {
-              function filterTable() {
-            document.querySelectorAll('.sortable-table').forEach(table => {
-    $(table).DataTable(); 
-});
+            var table = document.getElementById("danceTable");
+            var tbody = table.tBodies[0];
+            var rows = Array.from(tbody.rows);
+            var ascending = sortDirections[colIndex];
             
             rows.sort(function(a, b) {
                 var cellA = a.cells[colIndex].textContent.trim();
@@ -305,7 +303,7 @@
 <h2 style="color: blue; font-weight: bold; style="font-size: 30px;">Gesamte Datenbank</h2>
     
     <div class="table-wrapper">
-        <table id="danceTable2">
+        <table id="danceTable">
             <thead>
                 <tr>
                     <th onclick="sortTable(0)">Tanz ↕</th>
@@ -1392,9 +1390,10 @@
 <tr><td>Zjozzy's Funk</td><td>Bacco Per Bacco - Zucchero</td><td class='center'>13</td><td class='center'>32</td><td class='center'>2007</td></tr>
                 
  <script>               
-document.querySelectorAll('.sortable-table').forEach(table => {
-    $(table).DataTable(); 
-});
+function filterTable() {
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toLowerCase();
+    var tables = document.querySelectorAll("table");
 
     tables.forEach(function(table) {
         var tr = table.getElementsByTagName("tr");
