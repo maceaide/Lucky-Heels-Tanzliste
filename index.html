@@ -248,11 +248,11 @@
     </div>
 
     <script>
-        function filterTable() {
-            var input = document.getElementById("searchInput");
-            var filter = input.value.toUpperCase();
-            var table = document.getElementById("danceTable");
-            var tr = table.getElementsByTagName("tr");
+
+     document.querySelectorAll('.sortable-table').forEach(table => {
+    $(table).DataTable(); 
+});
+      
 
             for (var i = 1; i < tr.length; i++) {
                 var show = false;
