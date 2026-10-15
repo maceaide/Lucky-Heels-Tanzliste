@@ -273,10 +273,10 @@
 
         let sortDirections = [true, true, true, true, true];
         function sortTable(colIndex) {
-            var table = document.getElementById("danceTable2");
-            var tbody = table.tBodies[0];
-            var rows = Array.from(tbody.rows);
-            var ascending = sortDirections[colIndex];
+              function filterTable() {
+            document.querySelectorAll('.sortable-table').forEach(table => {
+    $(table).DataTable(); 
+});
             
             rows.sort(function(a, b) {
                 var cellA = a.cells[colIndex].textContent.trim();
