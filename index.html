@@ -1390,23 +1390,36 @@
 <tr><td>Zjozzy's Funk</td><td>Bacco Per Bacco - Zucchero</td><td class='center'>13</td><td class='center'>32</td><td class='center'>2007</td></tr>
                 
  <script>               
-function filterTable() {
-    var input = document.getElementById("searchInput");
-    var filter = input.value.toLowerCase();
-    var tables = document.querySelectorAll("table");
-
-    tables.forEach(function(table) {
-        var tr = table.getElementsByTagName("tr");
-        for (var i = 1; i < tr.length; i++) {
-            var rowText = tr[i].textContent || tr[i].innerText;
-            if (rowText.toLowerCase().indexOf(filter) > -1) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
+let sortDirections = [true, true, true, true, true];
+        function sortTable(colIndex) {
+            var table = document.getElementById("danceTable1");
+            var tbody = table.tBodies[0];
+            var rows = Array.from(tbody.rows);
+            var ascending = sortDirections[colIndex];
+            
+            rows.sort(function(a, b) {
+                var cellA = a.cells[colIndex].textContent.trim();
+                var cellB = b.cells[colIndex].textContent.trim();
+                
+                // Check if values are numeric
+                var numA = parseInt(cellA, 10);
+                var numB = parseInt(cellB, 10);
+                
+                if (!isNaN(numA) && !isNaN(numB)) {
+                    return ascending ? numA - numB : numB - numA;
+                }
+                
+                // Fallback to string comparison
+                return ascending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+            });
+            
+            // Re-append sorted rows
+            rows.forEach(row => tbody.appendChild(row));
+            
+            // Toggle direction
+            sortDirections[colIndex] = !ascending;
         }
-    });
-}
+  
 </script>
 </body>
 </html>
