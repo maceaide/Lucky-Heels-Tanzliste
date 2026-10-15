@@ -1390,7 +1390,29 @@
 <tr><td>Zjozzy's Funk</td><td>Bacco Per Bacco - Zucchero</td><td class='center'>13</td><td class='center'>32</td><td class='center'>2007</td></tr>
                 
  <script>               
-let sortDirections = [true, true, true, true, true];
+ function filterTable() {
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById("danceTable1");
+            var tr = table.getElementsByTagName("tr");
+
+            for (var i = 1; i < tr.length; i++) {
+                var show = false;
+                var tds = tr[i].getElementsByTagName("td");
+                for (var j = 0; j < tds.length; j++) {
+                    if (tds[j]) {
+                        var textValue = tds[j].textContent || tds[j].innerText;
+                        if (textValue.toUpperCase().indexOf(filter) > -1) {
+                            show = true;
+                            break;
+                        }
+                    }
+                }
+                tr[i].style.display = show ? "" : "none";
+            }
+        }
+
+        let sortDirections = [true, true, true, true, true];
         function sortTable(colIndex) {
             var table = document.getElementById("danceTable1");
             var tbody = table.tBodies[0];
@@ -1420,6 +1442,7 @@ let sortDirections = [true, true, true, true, true];
             sortDirections[colIndex] = !ascending;
         }
   
-</script>
+   </script>
+           
 </body>
 </html>
