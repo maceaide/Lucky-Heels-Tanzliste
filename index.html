@@ -1390,10 +1390,9 @@
 <tr><td>Zjozzy's Funk</td><td>Bacco Per Bacco - Zucchero</td><td class='center'>13</td><td class='center'>32</td><td class='center'>2007</td></tr>
                 
  <script>               
-function filterTable() {
-    var input = document.getElementById("searchInput");
-    var filter = input.value.toLowerCase();
-    var tables = document.querySelectorAll('table');
+document.querySelectorAll('.sortable-table').forEach(table => {
+    $(table).DataTable(); 
+});
 
     tables.forEach(function(table) {
         var tr = table.getElementsByTagName("tr");
