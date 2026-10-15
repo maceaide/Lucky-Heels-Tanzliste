@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+
+
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webseite</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+       
+     h1 {
+            color: peru;
+            margin-bottom: 10px;
+            font-size: 30px
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        #searchInput {
+            width: 100%;
+            max-width: 220px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        #searchInput:focus {
+            border-color: #3498db;
+        }
+        .table-wrapper {
+            overflow-x: auto;
+        }
+        table {
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            width: auto; /* Optimal constraint width */
+        }
+        th, td {
+            padding: 10px 18px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background-color: #34495e;
+            color: #fff;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+        th:hover {
+            background-color: #2c3e50;
+        }
+        /* Zebra-Striping contrast for alternating rows */
+        tr:nth-child(even) {
+            background-color: #f2f5f8;
+        }
+        tr:hover {
+            background-color: #e8f4fd;
+        }
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+ 
+     <h1 >listen</h1>
+ 
+
+    
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Suche">
+    </div>
+
+    <h2 style="color: blue; font-weight: bold; style="font-size: 20px;">repertoire</h2>
+
+    <div class="table-wrapper">
+        <table id="TestTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">ABC ↕</th>
+                    <th onclick="sortTable(1)">Mögliche ↕</th>
+                    <th onclick="sortTable(2)" class="center">Ranking ↕</th>
+                    <th onclick="sortTable(3)" class="center">Counts ↕</th>
+                    <th onclick="sortTable(4)" class="center">Jahr ↕</th>
+                </tr>
+            </thead>
+            <tbody>
+<tr><td>1976</td><td>1976 </td><td class='center'>4</td><td class='center'>32</td><td class='center'>2008</td></tr>
+<tr><td>1977</td><td>1976 </td><td class='center'>5</td><td class='center'>33</td><td class='center'>2009</td></tr>
+<tr><td>1978</td><td>1976 </td><td class='center'>6</td><td class='center'>34</td><td class='center'>2010</td></tr>
+
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function filterTable() {
+            var input = document.getElementById("searchInput");
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById("danceTable");
+            var tr = table.getElementsByTagName("tr");
+
+            for (var i = 1; i < tr.length; i++) {
+                var show = false;
+                var tds = tr[i].getElementsByTagName("td");
+                for (var j = 0; j < tds.length; j++) {
+                    if (tds[j]) {
+                        var textValue = tds[j].textContent || tds[j].innerText;
+                        if (textValue.toUpperCase().indexOf(filter) > -1) {
+                            show = true;
+                            break;
+                        }
+                    }
+                }
+                tr[i].style.display = show ? "" : "none";
+            }
+        }
+
+        let sortDirections = [true, true, true, true, true];
+        function sortTable(colIndex) {
+            var table = document.getElementById("danceTable");
+            var tbody = table.tBodies[0];
+            var rows = Array.from(tbody.rows);
+            var ascending = sortDirections[colIndex];
+            
+            rows.sort(function(a, b) {
+                var cellA = a.cells[colIndex].textContent.trim();
+                var cellB = b.cells[colIndex].textContent.trim();
+                
+                // Check if values are numeric
+                var numA = parseInt(cellA, 10);
+                var numB = parseInt(cellB, 10);
+                
+                if (!isNaN(numA) && !isNaN(numB)) {
+                    return ascending ? numA - numB : numB - numA;
+                }
+                
+                // Fallback to string comparison
+                return ascending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+            });
+            
+            // Re-append sorted rows
+            rows.forEach(row => tbody.appendChild(row));
+            
+            // Toggle direction
+            sortDirections[colIndex] = !ascending;
+        }
+    </script>
+
+<h2 style="color: blue; font-weight: bold; style="font-size: 30px;">Gesamte Datenbank</h2>
+    
+    <div class="table-wrapper">
+        <table id="danceTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">ABC ↕</th>
+                    <th onclick="sortTable(1)">Mögliche ↕</th>
+                    <th onclick="sortTable(2)" class="center">Ranking ↕</th>
+                    <th onclick="sortTable(3)" class="center">Counts ↕</th>
+                    <th onclick="sortTable(4)" class="center">Jahr ↕</th>
+                </tr>
+            </thead>
+            <tbody>
+
+<tr><td>1976</td><td>1976 </td><td class='center'>4</td><td class='center'>32</td><td class='center'>2008</td></tr>
+<tr><td>1977</td><td>1976 </td><td class='center'>5</td><td class='center'>33</td><td class='center'>2009</td></tr>
+<tr><td>1978</td><td>1976 </td><td class='center'>6</td><td class='center'>34</td><td class='center'>2010</td></tr>
+
+                
+ <script>               
+function filterTable() {
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toLowerCase();
+    var tables = document.querySelectorAll("table");
+
+    tables.forEach(function(table) {
+        var tr = table.getElementsByTagName("tr");
+        for (var i = 1; i < tr.length; i++) {
+            var rowText = tr[i].textContent || tr[i].innerText;
+            if (rowText.toLowerCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    });
+}
+</script>
+</body>
+</html>
