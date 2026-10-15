@@ -1400,28 +1400,7 @@
 <tr><td>Zjozzy's Funk</td><td>Bacco Per Bacco - Zucchero</td><td class='center'>13</td><td class='center'>32</td><td class='center'>2007</td></tr>
                 
  <script>               
- function filterTable() {
-    var input = document.getElementById("searchInput");
-    var filter = input.value.toLowerCase();
-
-    var tables = document.querySelectorAll("danceTable");
-
-    tables.forEach(function(table) {
-
-        var rows = table.getElementsByTagName("tr");
-
-        for (var i = 1; i < rows.length; i++) {
-
-            var text = rows[i].textContent || rows[i].innerText;
-
-            if (text.toLowerCase().indexOf(filter) > -1) {
-                rows[i].style.display = "";
-            } else {
-                rows[i].style.display = "none";
-            }
-        }
-    });
-}
+ 
 
         let sortDirections = [true, true, true, true, true];
        function sortTable(th, colIndex) {
