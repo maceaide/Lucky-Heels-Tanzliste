@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events und Teilnehmer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+        }
 
+        h1 {
+    color: sienna;
+    margin-bottom: 30px;
+    text-align: left;
+    font-size: 28px;
+    display: block;
+    width: 100%;
+}
+
+        .table-container {
+            width: 100%;
+            max-width: 1000px; /* Breite leicht erhöht für die neue Spalte */
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .event-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .event-table th {
+            background-color: #34495e;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 14px 20px;
+            font-size: 16px;
+            border: 1px solid #444444;
+        }
+
+        .event-table td {
+            padding: 14px 20px;
+            border: 1px solid #eeeeee;
+            font-size: 15px;
+            vertical-align: top;
+        }
+
+        .group-even {
+            background-color: #fcfcfc;
+        }
+        
+        .group-odd {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hauptüberschrift -->
+    <h1>Übersicht Events und Teilnehmer (ENTWURF)</h1>
+
+
+
+
+    
+    <!-- Tabellen-Bereich -->
+    
+    <div class="table-container">
+        <table class="event-table">
+            <thead>
+                <tr>
+                    <th>Event</th>
+                    <th>Datum</th>
+                    <th>Teilnehmer</th>
+                    <th>Anmeldung erfolgt; durch</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+               <!-- ERSTER BLOCK: 1 Event, 3 Teilnehmer, 1 Anmelder -->
+                <tr class="group-odd">
+                    <!-- rowspan="3" verbindet die Zellen für alle 3 Teilnehmer-Zeilen 
+                    <td rowspan="3"><strong>Lucky Heels Country Night</strong></td>
+                    <td rowspan="3" style="white-space: nowrap;">24.10.2026</td>
+                    <td>Max Mustermann</td>
+                    <td rowspan="3">Anna Schmidt</td>
+                </tr>
+                <tr class="group-odd">
+                    <td>Erika Mustermann</td>
+                </tr>
+                <tr class="group-odd">
+                    <td>Hans Meier</td>
+                </tr>
+
+              <!-- ZWEITER BLOCK: 1 Event, 2 Teilnehmer, 1 Anmelder -->
+                <tr class="group-even">
+                    <!-- rowspan="2" für 2 Teilnehmer 
+                    <td rowspan="2"><strong>Tanz-Workshop Salsa</strong></td>
+                    <td rowspan="2" style="white-space: nowrap;">07.11.2026</td>
+                    <td>Michael Wagner</td>
+                    <td rowspan="2">Sabine Wagner</td>
+                </tr>
+                <tr class="group-even">
+                    <td>Janine Wagner</td>
+                </tr>
+    
+
+            </tbody>
+        </table>
+    </div>
+
+    
+</body>
+</html>
