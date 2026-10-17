@@ -104,8 +104,38 @@
 <body>
  
      <h1 >Lucky Heels - Tanzlisten</h1>
+
+
+ <!-- Datum der letzten Speicherung -->
+<p style="color: blue; font-weight: bold; font-size: 18px;">
+  Stand: <time id="stand-datum"></time>
+</p>
+
+<script>
+  // Liest das letzte Änderungsdatum der Datei aus
+  const aenderungsDatum = new Date(document.lastModified);
+
+  // Format für die sichtbare Anzeige (z. B. "17. Oktober 2026")
+  const datumAnzeige = aenderungsDatum.toLocaleDateString('de-DE', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  });
+
+  // Format für das datetime-Attribut (YYYY-MM-DD, z. B. "2026-10-17")
+  const jahr = aenderungsDatum.getFullYear();
+  const monat = String(aenderungsDatum.getMonth() + 1).padStart(2, '0');
+  const tag = String(aenderungsDatum.getDate()).padStart(2, '0');
+  const datumISO = `${jahr}-${monat}-${tag}`;
+
+  // Elemente im HTML befüllen
+  const timeElement = document.getElementById('stand-datum');
+  timeElement.textContent = datumAnzeige;
+  timeElement.setAttribute('datetime', datumISO);
+</script>
+
+
  
-<p style="color: blue; font-weight: bold; font-size: 18px;">Stand: <time datetime="2026-10-08">17. Oktober 2026</time></p>
 <p style="color: blue; font-weight: bold; font-size: 12px;">Developer/Owner: Aires Macedo</p>
     
     <div class="search-container">
