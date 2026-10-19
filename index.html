@@ -163,11 +163,38 @@ table th {
 
     <h2 style="color: sienna; font-weight: bold; style="font-size: 20px;">Tanzrepertoire der Luckys</h2>
 
-   <!-- <div class="table-wrapper">
+   <div class="table-wrapper">
         <table id="danceTable">
-            <thead> -->
+            <thead>
 
 
+             
+
+/* 1. Wir zwingen den bereits vorhandenen Container, das Scrollen zu erlauben */
+.table-wrapper {
+    overflow-y: auto !important;
+    position: relative !important;
+}
+
+/* 2. Wir fixieren die erste Zeile der Tabelle bombenfest am oberen Rand */
+.table-wrapper table thead tr th,
+.table-wrapperr table th {
+    position: sticky !important;
+    top: 0 !important;
+    background-color: #ffffff !important; /* MUSS die Hintergrundfarbe Ihrer Webseite sein */
+    z-index: 999 !important;               /* Schiebt den Kopf über die scrollenden Texte */
+    box-shadow: inset 0 -2px 0 #ccc !important; /* Verhindert, dass die untere Linie beim Scrollen flackert */
+}
+
+
+
+
+             
+
+
+
+
+             
  <!-- NEU: Bereich für den fixierten Tabellenkopf -->
         <thead> 
             <tr>
