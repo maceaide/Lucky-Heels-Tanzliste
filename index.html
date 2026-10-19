@@ -108,13 +108,12 @@ table tr td:first-child {
     font-weight: bold;
 }
 
-table thead th {
-    position: sticky;
+table th {
+    position: sticky !important; /* !important erzwingt die Eigenschaft gegen andere Stile */
     top: 0;
-    background-color: #ffffff; /* Wichtig, damit der Text beim Scrollen nicht durchscheint */
-    z-index: 1; /* Hält den Kopf über dem Inhalt */
+    background-color: #ffffff; /* Passen Sie dies an Ihre Seitenhintergrundfarbe an */
+    z-index: 999; /* Sehr hoher Wert, damit nichts den Kopf überlagert */
 }
-
 
 
 
