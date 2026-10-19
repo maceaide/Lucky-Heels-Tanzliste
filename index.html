@@ -107,6 +107,18 @@
 table tr td:first-child {
     font-weight: bold;
 }
+
+table thead th {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff; /* Wichtig, damit der Text beim Scrollen nicht durchscheint */
+    z-index: 1; /* Hält den Kopf über dem Inhalt */
+}
+
+
+
+
+     
     </style>
 </head>
 <body>
@@ -155,13 +167,29 @@ table tr td:first-child {
     <div class="table-wrapper">
         <table id="danceTable">
             <thead>
-                <tr>
+
+
+ <!-- NEU: Bereich für den fixierten Tabellenkopf -->
+        <thead> 
+            <tr>
+                <th>Tanz ↕</th>
+                <th>Mögliche Musik / Interpret ↕</th>
+                <th>Ranking > 2024 ↕</th>
+                <th>Counts ↕</th>
+                <th>Jahr ↕</th>
+            </tr>
+
+
+             
+               <!-- <tr>
                     <th onclick="sortTable(this,0)">Tanz ↕</th>
                     <th onclick="sortTable(this,1)">Mögliche Musik / Interpret ↕</th>
                     <th onclick="sortTable(this,2)" class="center">Ranking > 2024 ↕</th>
                     <th onclick="sortTable(this,3)" class="center">Counts ↕</th>
                     <th onclick="sortTable(this,4)" class="center">Jahr ↕</th>
-                </tr>
+                </tr> -->
+
+
             </thead>
             <tbody>
 <tr><td>16 Step (P)</td><td>Would you go with me - John Turner</td><td class='center'>23</td><td class='center'>24</td><td class='center'>-</td></tr>
