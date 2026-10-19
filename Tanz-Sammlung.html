@@ -52,6 +52,18 @@
         .table-wrapper {
             overflow-x: auto;
         }
+
+
+table-wrapper th:first-child,
+table-wrapper td:first-child {
+  position: sticky;
+  left: 0;
+  background-color: white; /* Wichtig: Verhindert, dass Text darunter durchscheint */
+  z-index: 1;    
+
+
+
+       
         table {
             border-collapse: collapse;
             background: #fff;
@@ -85,14 +97,6 @@
         .center {
             text-align: center;
         }
-
-
-
-thead th {
-  position: sticky;
-  top: 1;
-  background-color: #ffffff; /* Wichtig: Hintergrundfarbe setzen, damit Text nicht durchschimmert */
-  z-index: 1;               
 
 
 
