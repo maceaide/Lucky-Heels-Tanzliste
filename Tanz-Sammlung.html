@@ -117,12 +117,15 @@ table tr td:first-child {
      <h1 >Tanzsammlung / Tanzliste</h1>
  
 
-
-
-   <div class="search-container"> 
-  <!-- Typ von "text" auf "search" geändert -->
-  <input type="search" id="searchInput" onkeyup="filterTable()" placeholder="Suche nach Tanz, Interpret, etc."> 
+<div class="search-container"> 
+  <!-- onkeyup durch oninput ersetzt, um das 'x' abzufangen -->
+  <input type="search" id="searchInput" oninput="filterTable()" placeholder="Suche nach Tanz, Interpret, etc."> 
 </div>
+
+
+  <!-- Typ von "text" auf "search" geändert 
+  <input type="search" id="searchInput" onkeyup="filterTable()" placeholder="Suche nach Tanz, Interpret, etc."> 
+</div> -->
     
     <!-- <div class="search-container">
         <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Suche nach Tanz, Interpret, etc.">
